@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050607">
+  <title>ISD Unity | Imperiales Einsatznetzwerk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-media" aria-hidden="true">
+    <div class="background-image" id="backgroundImage"></div>
+    <canvas id="starfield"></canvas>
+    <div class="deep-space-gradient"></div>
+    <div class="holo-grid"></div>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+  </div>
+
+  <section class="boot-screen" id="bootScreen" aria-live="polite">
+    <div class="boot-frame">
+      <div class="boot-classification">IMPERIALES MILITARSYSTEM | UNITY TASK FORCE</div>
+      <div class="boot-title">UNITY TASK FORCE NETWORK INITIALISIERUNG</div>
+      <div class="boot-log" id="bootLog"></div>
+      <div class="boot-footer">
+        <span>ISD Unity</span>
+        <span>Manpha Operations Command</span>
+        <span>Zugriff autorisiert</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="interface-shell" id="interfaceShell">
+    <header class="topbar">
+      <div class="brand-cluster">
+        <div class="imperial-mark" id="imperialMark" aria-hidden="true">
+          <img id="logoImage" alt="">
+          <span></span>
+        </div>
+        <div>
+          <p class="eyebrow">Imperiales Einsatznetzwerk</p>
+          <h1 id="serverName">Unity Task Force</h1>
+        </div>
+      </div>
+      <div class="top-status">
+        <div class="status-dot"></div>
+        <span>Zugriff autorisiert</span>
+      </div>
+    </header>
+
+    <section class="command-deck">
+      <aside class="identity-panel panel">
+        <div class="panel-header">
+          <span>Identifikation</span>
+          <strong>Clearance IV</strong>
+        </div>
+
+        <div class="access-card">
+          <div class="card-ridge"></div>
+          <div class="card-topline">
+            <span>Imperial Access Card</span>
+            <span id="accessCode">UTF-0000</span>
+          </div>
+          <div class="card-name" id="playerName">Unbekannte Kennung</div>
+          <div class="card-grid">
+            <div>
+              <span>SteamID</span>
+              <strong id="steamId">Unbekannte Kennung</strong>
+            </div>
+            <div>
+              <span>Einsatzraum</span>
+              <strong id="mapName">Karte wird geladen</strong>
+            </div>
+            <div>
+              <span>Flagship</span>
+              <strong>ISD Unity</strong>
+            </div>
+            <div>
+              <span>HQ</span>
+              <strong>Manpha</strong>
+            </div>
+          </div>
+          <div class="scan-sweep"></div>
+        </div>
+
+        <div class="diagnostics">
+          <div class="diagnostic-row">
+            <span>Holonet-Link</span>
+            <strong>stabil</strong>
+          </div>
+          <div class="diagnostic-row">
+            <span>Sicherheitsmatrix</span>
+            <strong>aktiv</strong>
+          </div>
+          <div class="diagnostic-row">
+            <span>Navy-Freigabe</span>
+            <strong>erteilt</strong>
+          </div>
+          <div class="diagnostic-row">
+            <span>Einsatzdaten</span>
+            <strong>werden geladen</strong>
+          </div>
+        </div>
+      </aside>
+
+      <section class="tactical-core">
+        <div class="projection-stage panel">
+          <div class="projection-header">
+            <span>Taktische Verbindung</span>
+            <strong>ISD UNITY // MANPHA ORBIT</strong>
+          </div>
+          <div class="holo-orbit">
+            <div class="radar">
+              <div class="radar-ring ring-a"></div>
+              <div class="radar-ring ring-b"></div>
+              <div class="radar-ring ring-c"></div>
+              <div class="radar-sweep"></div>
+              <div class="radar-cross x"></div>
+              <div class="radar-cross y"></div>
+              <div class="radar-point p1"></div>
+              <div class="radar-point p2"></div>
+              <div class="radar-point p3"></div>
+            </div>
+            <div class="planet"></div>
+            <div class="destroyer-projection">
+              <div class="destroyer-body"></div>
+              <div class="destroyer-bridge"></div>
+              <div class="destroyer-glow"></div>
+            </div>
+          </div>
+          <div class="telemetry-strip">
+            <span>Orbitale Route: freigegeben</span>
+            <span>Transportfenster: aktiv</span>
+            <span>IFF: imperial</span>
+          </div>
+        </div>
+
+        <div class="terminal-panel panel">
+          <div class="panel-header">
+            <span>Systemterminal</span>
+            <strong>Live</strong>
+          </div>
+          <div class="terminal-output" id="terminalOutput"></div>
+        </div>
+      </section>
+
+      <aside class="briefing-panel panel">
+        <div class="panel-header">
+          <span>Deployment Briefing</span>
+          <strong>Post-Endor</strong>
+        </div>
+        <div class="briefing-title">Manpha Operations Command</div>
+        <p id="briefingText">
+          Neue Einsatzkräfte werden an Bord der ISD Unity registriert. Halte dich bereit für Kommandostruktur, Patrouillenrouten und imperiale Sicherheitsprotokolle.
+        </p>
+        <div class="briefing-list">
+          <div>
+            <span>Primärziel</span>
+            <strong>Stabilisierung imperialer Restkräfte</strong>
+          </div>
+          <div>
+            <span>Sektor</span>
+            <strong>Manpha Sicherheitszone</strong>
+          </div>
+          <div>
+            <span>Direktive</span>
+            <strong>Für das Imperium</strong>
+          </div>
+        </div>
+        <div class="tip-box">
+          <span>RP-Hinweis</span>
+          <p id="tipText">Befolge die imperiale Befehlskette.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="loading-dock">
+      <div class="loading-meta">
+        <span id="loadingStatus">Synchronisiere Einsatzdaten...</span>
+        <strong id="loadingPercent">00%</strong>
+      </div>
+      <div class="progress-track" aria-label="Ladefortschritt">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-pulse"></div>
+      </div>
+      <div class="footer-controls">
+        <button class="audio-control" id="audioToggle" type="button">
+          <span class="audio-led"></span>
+          <span id="audioLabel">Audio aktivieren</span>
+        </button>
+        <div class="footer-code">UNITY-TASK-FORCE // IMPERIAL RP // ISD UNITY</div>
+      </div>
+    </footer>
+  </main>
+
+  <audio id="ambientAudio" preload="none" loop></audio>
+  <script src="script.js"></script>
+</body>
+</html>
